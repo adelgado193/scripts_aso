@@ -1,0 +1,77 @@
+dn: uid=jlopez,ou=usuarios,dc=infomur,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: jlopez
+sn: Lopez
+givenName: Juan
+cn: Juan Lopez
+displayName: Juan Lopez
+uidNumber: 2000
+gidNumber: 10000
+userPassword: Juan_2024
+gecos: Juan Lopez
+loginShell: /bin/bash
+homeDirectory: /home/jlopez 
+shadowExpire: -1
+shadowFlag: 0
+shadowWarning: 7
+shadowMin: 8
+shadowMax: 999999
+shadowLastChange: 10877
+mail: juan.lopez@infomur.es
+postalCode: 30500
+o: infomur
+initials: JL
+
+dn: uid=amarin,ou=usuarios,dc=infomur,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: amarin
+sn: marin
+givenName: Antonio
+cn: Antonio Marin
+displayName: Antonio Marin
+uidNumber: 2001
+gidNumber: 10001
+userPassword: Antonio_2024
+gecos: Antonio Marin
+loginShell: /bin/bash
+homeDirectory: /home/amarin 
+shadowExpire: -1
+shadowFlag: 0
+shadowWarning: 7
+shadowMin: 8
+shadowMax: 999999
+shadowLastChange: 10877
+mail: antonio.marin@infomur.es
+postalCode: 30560
+o: infomur
+initials: AM
+
+dn: uid=pgarcia,ou=usuarios,dc=infomur,dc=es
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: pgarcia
+sn: Garcia
+givenName: Pedro
+cn: Pedro Garcia
+displayName: Pedro Garcia
+uidNumber: 2002
+gidNumber: 10002
+userPassword: Pedro_2024
+gecos: Pedro Garcia
+loginShell: /bin/bash
+homeDirectory: /home/pgarcia 
+shadowExpire: -1
+shadowFlag: 0
+shadowWarning: 7
+shadowMin: 8
+shadowMax: 999999
+shadowLastChange: 10877
+mail: pedro.garcia@infomur.es
+postalCode: 30562
+o: infomur
+initials: PG

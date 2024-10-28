@@ -1,0 +1,5 @@
+# Modificar objetos LDAP. En este caso sustituir el email
+# dn: cn=pepito,ou=usuarios,dc=infomur,dc=es
+# changetype: modify
+# replace: mail
+# mail: pepitolopez@infomur.es

@@ -1,0 +1,3 @@
+# Eliminar un objeto en LDAP en este caso un usuario
+# dn: cn=pepito,ou=usuarios,dc=infomur,dc=es
+# changetype: delete
