@@ -6,11 +6,59 @@ BASE_DN="dc=infomur,dc=es"          	# Base DN del dominio LDAP
 ADMIN_DN="cn=admin,dc=infomur,dc=es" 	# Usuario administrador del dominio LDAP
 ADMIN_PASSWORD="Admin1"              	# Contraseña del admin
 
+
+# Función para mostrar el menú
+mostrar_menu() {
+  echo "Configuración del Cliente LDAP"
+  echo "1. Modificar dirección del servidor LDAP"
+  echo "2. Modificar DN base"
+  echo "3. Modificar credenciales del administrador"
+  echo "4. Continuar sin cambios"
+  echo "5. Salir"
+  echo
+}
+
+
+# Función para modificar configuraciones
+modificar_configuracion() {
+  while true; do
+    mostrar_menu
+    read -p "Seleccione una opción: " opcion
+    case $opcion in
+      1)
+        read -p "Ingrese la nueva dirección del servidor LDAP: " LDAP_URI
+        ;;
+      2)
+        read -p "Ingrese el nuevo DN base: " BASE_DN
+        ;;
+      3)
+        read -p "Ingrese el nuevo DN del administrador: " ADMIN_DN
+        read -s -p "Ingrese la nueva contraseña del administrador: " ADMIN_PASSWORD
+        echo
+        ;;
+      4)
+        echo "Continuando con la configuración actual..."
+        break
+        ;;
+      5)
+        echo "No se ha realizado ninguna acción."
+        exit 0
+        ;;
+      *)
+        echo "Opción no válida, intente nuevamente."
+        ;;
+    esac
+  done
+}
+
+# Llamar a la función de configuración
+modificar_configuracion
+
 # Para que el proceso sea automatizado:
 export DEBIAN_FRONTEND=noninteractive
 
 # Actualizar los repositorios y asegurarse de que el sistema esté actualizado
-sudo apt update && sudo apt upgrade -y
+# sudo apt update && sudo apt upgrade -y
 
 # Instalar paquetes necesarios en modo no interactivo
 sudo DEBIAN_FRONTEND=noninteractive apt install -y libnss-ldap libpam-ldap ldap-utils ldap-auth-config
