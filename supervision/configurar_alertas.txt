@@ -1,0 +1,15 @@
+-------------- AÑADIR AL SCRIPT DE SUPERVISIÓN --------------
+
+# Función para manejar las señales
+handle_signal() {
+    echo "¡Alerta! Se ha recibido una señal crítica (SIGUSR1)" | mail -s "Alerta del sistema" tu_correo@example.com
+}
+
+# Registrar la señal SIGUSR1
+trap handle_signal SIGUSR1
+
+# Resto de tu script...
+
+
+Probar la alerta
+sudo systemctl kill --signal=SIGUSR1 monitorizacion.service

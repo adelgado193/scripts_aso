@@ -1,0 +1,6 @@
+crontab -e
+0 * * * * /ruta/a/monitorizacion.sh
+
+Para ejecutarse cada 5min
+*/5 * * * * /ruta/a/monitorizacion.sh
+

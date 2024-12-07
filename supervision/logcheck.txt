@@ -1,0 +1,13 @@
+sudo apt update
+sudo apt install logcheck
+
+CONFIGURAR LOGCHECK
+sudo nano /etc/logcheck/logcheck.conf
+
+REVISAR LÍNEAS:
+MAILTO="tu_correo@example.com"
+REPORTLEVEL=security
+
+VERIFICAR FUNCIONAMIENTO
+sudo logcheck
+

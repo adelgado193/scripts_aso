@@ -1,0 +1,6 @@
+sudo systemctl start atd
+y habilitarlo para el arranque con sudo systemctl enable atd
+echo "systemctl status nginx | grep 'active (running)'" | at 3:00 PM
+
+Verificar tareas programadas:
+Ejecutar comando atq

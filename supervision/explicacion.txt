@@ -1,0 +1,13 @@
+Descripción del script:
+
+    Uso de CPU y memoria:
+        Utiliza el comando top para mostrar los 5 procesos que más CPU (%CPU) y memoria (%MEM) consumen.
+
+    Espacio en disco:
+        El comando df -h muestra el uso de disco. El awk busca particiones con más del 90% de uso, indicando que quedan menos del 10% de espacio libre.
+
+    Logs del sistema:
+        Se revisan los archivos /var/log/syslog y dmesg para encontrar errores y eventos críticos relacionados con el sistema.
+
+    Almacenamiento de logs personalizados:
+        Los resultados de todas las verificaciones se guardan en el archivo /var/log/monitorizacion.log utilizando la función log_message, que agrega una marca de tiempo a cada entrada.
