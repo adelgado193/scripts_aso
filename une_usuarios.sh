@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 # Configuración de las variables de entorno
 DOMINIO="infomur.es" # Nombre del dominio LDAP
@@ -32,13 +32,15 @@ sudo sed -i '/^shadow:/ s/$/ ldap/' /etc/nsswitch.conf
 
 # Modificamos el fichero ldap.conf
 echo "Configurando el fichero /etc/ldap.conf..."
-sudo bash -c " cat > /etc/ldap.conf" <<EOL base $LDAP_BASE_DN
-uri $LDAP_URI
-ldap_version 3
-binddn $ADMIN_DN
-bindpw $ADMIN_PASSWORD
-rootbinddn $ADMIN_DN
-pam_password md5
+
+# El contenido que hay entre <<EOL EOL es lo que se escribirá en el fichero /etc/ldap.conf
+sudo bash -c " cat > /etc/ldap.conf" <<EOL base $LDAP_BASE_DN #Pedirá al usuario el nombre del dominio
+uri $LDAP_URI #pedirá al usuario la dirección del servidor LDAP
+ldap_version 3 #Versión de LDAP que se utilizará
+binddn $ADMIN_DN #pedirá al usuario el DN del admin del dominio
+bindpw $ADMIN_PASSWORD #pedirá al usuario la contraseña del admin del dominio
+rootbinddn $ADMIN_DN #establece el DN de acceso para ROOT
+pam_password md5 #Método de hashing que se utilizará para las contraseñas en PAM
 EOL
 
 # Modificamos el fichero /etc/pam.d/common-session

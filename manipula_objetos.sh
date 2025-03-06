@@ -26,6 +26,7 @@ modificar_usuario() {
 }
 
 # Función para eliminar un usuario
+# Eliminaremos a un usuario cuyo dn pasemos como primer parámetro en la ejecución
 eliminar_usuario() {
     echo "Eliminando usuario..."
     ldapdelete -x -D "$NOMBRE_USUARIO" -w "$PASSWORD" "$1" || {

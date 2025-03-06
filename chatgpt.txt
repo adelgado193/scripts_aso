@@ -1,0 +1,13 @@
+# Leer el archivo LDIF y procesar cada usuario
+while read -r line; do
+    # Extraer el UID del usuario a partir de la línea (ajusta esto según tu formato LDIF)
+    UID=$(echo "$line" | grep "^uid:" | awk '{print $2}')
+    
+    if [ -n "$UID" ]; then
+        if usuario_existe "$UID"; then
+            echo "El usuario $UID ya existe. No se creará."
+        else
+            crear_usuario "$line" # Aquí puedes adaptar cómo se llama a la función
+        fi
+    fi
+done < "$CREAR_USU"
